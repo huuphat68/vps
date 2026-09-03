@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== THAY TÊN WEBSITE TẠI ĐÂY ===== -->
+    <!-- ===== THAY TITLE TRÌNH DUYỆT TẠI ĐÂY ===== -->
+    <title>PHÁT VPS - Treo game giá rẻ</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        header {
+            background: white;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 800;
+            color: #2563eb;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 90px 20px;
+            text-align: center;
+            background: white;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 7px 13px;
+            border-radius: 20px;
+            background: #eff6ff;
+            color: #2563eb;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #2563eb;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #667085;
+            font-size: 17px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 22px;
+            border-radius: 9px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #eef2f7;
+            color: #172033;
+        }
+
+        /* SECTION */
+        section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #667085;
+        }
+
+        /* VPS INFO */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            border: 1px solid #e9edf3;
+        }
+
+        .info-card .icon {
+            font-size: 27px;
+            margin-bottom: 12px;
+        }
+
+        .info-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        /* PRICE */
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .price-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 15px;
+            padding: 28px;
+            text-align: center;
+        }
+
+        .price-card.featured {
+            border: 2px solid #2563eb;
+            transform: translateY(-5px);
+        }
+
+        .price-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 30px;
+            font-weight: 800;
+            margin: 15px 0;
+            color: #2563eb;
+        }
+
+        .price small {
+            font-size: 13px;
+            color: #777;
+            font-weight: normal;
+        }
+
+        .features {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .features li {
+            margin: 9px 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .features li::before {
+            content: "✓";
+            color: #16a34a;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* GUIDE */
+        .guide-list {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .guide {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .guide-left {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .guide-number {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #eff6ff;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .guide p {
+            color: #667085;
+            font-size: 13px;
+        }
+
+        .watch {
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        /* YOUTUBE */
+        .youtube-box {
+            max-width: 800px;
+            margin: auto;
+            background: #111827;
+            color: white;
+            border-radius: 16px;
+            padding: 45px 25px;
+            text-align: center;
+        }
+
+        .youtube-box h2 {
+            margin-bottom: 10px;
+        }
+
+        .youtube-box p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .youtube-btn {
+            display: inline-block;
+            background: #ef4444;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        /* FAQ */
+        .faq {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        details {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 17px 20px;
+            margin-bottom: 10px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        details p {
+            margin-top: 12px;
+            color: #667085;
+            font-size: 14px;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #172033;
+            color: white;
+            text-align: center;
+            border-radius: 18px;
+            padding: 50px 20px;
+        }
+
+        .contact p {
+            color: #cbd5e1;
+            margin: 10px 0 25px;
+        }
+
+        .zalo-btn {
+            display: inline-block;
+            background: #2563eb;
+            padding: 13px 25px;
+            border-radius: 9px;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #98a2b3;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 65px 20px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .info-grid,
+            .price-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-card.featured {
+                transform: none;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .guide {
+                align-items: flex-start;
+            }
+
+            .watch {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+    <div class="container nav">
+
+        <!-- ===== THAY TÊN SHOP TẠI ĐÂY ===== -->
+        <!-- ===== THAY TÊN BRAND TẠI ĐÂY ===== -->
+        <div class="logo">PHÁT VPS</div>
+
+        <div class="nav-links">
+            <a href="#vps">VPS là gì?</a>
+            <a href="#price">Bảng giá</a>
+            <a href="#guide">Hướng dẫn</a>
+            <a href="#contact">Liên hệ</a>
+        </div>
+
+    </div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<div class="hero">
+
+    <div class="badge">Hỗ trợ dùng thử</div>
+
+    <!-- ===== THAY TIÊU ĐỀ TẠI ĐÂY ===== -->
+
+    <h1>
+        VPS treo game,<br>
+        <span>ổn định & dễ sử dụng</span>
+    </h1>
+
+    <!-- ===== THAY MÔ TẢ TẠI ĐÂY ===== -->
+
+    <p>
+        Cung cấp VPS Windows tối ưu cho nhu cầu treo game 24/7, phù hợp với các game Java và các tác vụ cần máy hoạt động liên tục.
+    </p>
+
+    <div class="buttons">
+
+        <a href="#price" class="btn btn-primary">
+            Xem bảng giá
+        </a>
+
+        <a href="#guide" class="btn btn-secondary">
+            Xem hướng dẫn
+        </a>
+ </a>
+
+        <!-- ===== THAY LINK ZALO NÚT LIÊN HỆ TRANG ĐẦU TẠI ĐÂY ===== -->
+        <a href="https://zalo.me/" target="_blank" class="btn btn-secondary">
+             Liên hệ Zalo
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= VPS LÀ GÌ ================= -->
+
+<section id="vps">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>VPS là gì?</h2>
+
+            <p>
+                Hiểu đơn giản về VPS trước khi sử dụng
+            </p>
+        </div>
+
+
+        <div class="info-grid">
+
+            <div class="info-card">
+
+                <div class="icon">🖥️</div>
+
+                <h3>VPS là gì?</h3>
+
+                <p>
+                    VPS là một máy tính ảo chạy trên máy chủ. Bạn có thể điều khiển từ xa giống như máy tính bình thường.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="icon">⚡</div>
+
+                <h3>Dùng để làm gì?</h3>
+
+                <p>
+                    Phù hợp để treo game Java 24/7, chạy bot hoặc các phần mềm cần hoạt động liên tục mà không phải bật máy cá nhân.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="icon">🌐</div>
+
+                <h3>Truy cập từ xa</h3>
+
+                <p>
+                    Có Internet là bạn có thể đăng nhập, kiểm tra game và quản lý máy từ xa.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BẢNG GIÁ ================= -->
+
+<section id="price">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Bảng giá VPS</h2>
+
+            <p>
+                Chọn cấu hình phù hợp với nhu cầu của bạn
+            </p>
+
+        </div>
+
+
+        <div class="price-grid">
+
+
+            <!-- ===== VPS 1 ===== -->
+
+            <div class="price-card">
+
+                <!-- THAY TÊN GÓI -->
+                <h3>Gói P1</h3>
+
+                <!-- ===== THAY GIÁ GÓI TẠI ĐÂY ===== -->
+                <div class="price">
+                    50K
+                    <small>/tháng</small>
+                </div>
+
+                <ul class="features">
+
+                    <!-- ===== THAY CẤU HÌNH GÓI TẠI ĐÂY ===== -->
+                    <li>2GB RAM</li>
+                    <li>2 vCPU</li>
+                    <li>40GB SSD</li>
+                    <li>Windows</li>
+                    <li>Hỗ trợ Zalo</li>
+
+                </ul>
+
+                <!-- ===== THAY LINK ZALO GÓI TẠI ĐÂY ===== -->
+                <a
+                    href="https://zalo.me/"
+                    class="btn btn-primary">
+                    Đăng ký
+                </a>
+
+            </div>
+
+
+            <!-- ===== VPS 2 ===== -->
+
+            <div class="price-card featured">
+
+                <h3>Gói P2</h3>
+
+                <div class="price">
+                    80K
+                    <small>/tháng</small>
+                </div>
+
+                <ul class="features">
+
+                    <li>4GB RAM</li>
+                    <li>2 vCPU</li>
+                    <li>60GB SSD</li>
+                    <li>Windows</li>
+                    <li>Hỗ trợ Zalo</li>
+
+                </ul>
+
+                <a
+                    href="https://zalo.me/"
+                    class="btn btn-primary">
+                    Đăng ký
+                </a>
+
+            </div>
+
+
+            <!-- ===== VPS 3 ===== -->
+
+            <div class="price-card">
+
+                <h3>Gói P3</h3>
+
+                <div class="price">
+                    120K
+                    <small>/tháng</small>
+                </div>
+
+                <ul class="features">
+
+                    <li>8GB RAM</li>
+                    <li>4 vCPU</li>
+                    <li>100GB SSD</li>
+                    <li>Windows</li>
+                    <li>Hỗ trợ Zalo</li>
+
+                </ul>
+
+                <a
+                    href="https://zalo.me/"
+                    class="btn btn-primary">
+                    Đăng ký
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= YOUTUBE ================= -->
+
+<section id="guide">
+
+    <div class="container">
+
+        <div class="youtube-box">
+
+            <h2>📺 YouTube hướng dẫn</h2>
+
+            <p>
+                Xem các video hướng dẫn sử dụng VPS tại kênh YouTube.
+            </p>
+
+            <!-- ===== THAY LINK KÊNH YOUTUBE TẠI ĐÂY ===== -->
+
+            <a
+                href="https://youtube.com/"
+                target="_blank"
+                class="youtube-btn">
+
+                ▶ Xem kênh YouTube
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FAQ ================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Câu hỏi thường gặp</h2>
+
+        </div>
+
+
+        <div class="faq">
+
+            <!-- ===== THAY CÂU HỎI / CÂU TRẢ LỜI ===== -->
+
+            <details>
+
+                <summary>
+                    VPS có hoạt động 24/7 không?
+                </summary>
+
+                <p>
+                    Có. VPS được thiết kế để hoạt động liên tục,
+                    miễn là tài khoản thuê vẫn còn hiệu lực.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Tôi không biết sử dụng VPS thì sao?
+                </summary>
+
+                <p>
+                    Bạn có thể xem các video hướng dẫn ở phía trên.
+                    Nếu vẫn gặp khó khăn, hãy liên hệ qua Zalo để được hỗ trợ.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Có thể sử dụng VPS trên điện thoại không?
+                </summary>
+
+                <p>
+                    Có. Bạn có thể sử dụng ứng dụng Remote Desktop
+                    để kết nối tới VPS.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    VPS hết hạn thì sao?
+                </summary>
+
+                <p>
+                    VPS sẽ ngừng hoạt động khi hết thời hạn thuê.
+                    Vui lòng liên hệ trước khi hết hạn nếu muốn gia hạn.
+                </p>
+
+            </details>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact">
+
+            <h2>Cần hỗ trợ?</h2>
+
+            <p>
+                Nếu bạn gặp vấn đề khi sử dụng VPS,
+                hãy liên hệ để được hỗ trợ.
+            </p>
+
+
+            <!-- ===== THAY LINK ZALO ===== -->
+
+            <a
+                href="https://zalo.me/"
+                target="_blank"
+                class="zalo-btn">
+
+                💬 Liên hệ Zalo
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <!-- ===== THAY TÊN SHOP ===== -->
+
+    <!-- ===== THAY TÊN BRAND FOOTER TẠI ĐÂY ===== -->
+    © 2026 PHÁT VPS. All rights reserved.
+
+</footer>
+
+</body>
+</html>
