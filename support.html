@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trung tâm hỗ trợ - PHÁT VPS</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: Arial, sans-serif; background: #f5f7fb; color: #172033; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1000px; margin: auto; padding: 0 20px; }
+        header { background: white; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        .nav { height: 65px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 21px; font-weight: 800; color: #2563eb; }
+        .back { color: #2563eb; font-size: 14px; font-weight: 700; }
+        .hero { padding: 65px 20px 35px; text-align: center; }
+        .hero h1 { font-size: 36px; margin-bottom: 8px; }
+        .hero p { color: #667085; }
+        .article-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; padding-bottom: 45px; }
+        .article-card { display: block; background: white; border: 1px solid #e5e7eb; border-radius: 14px; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(23, 32, 51, .09); }
+        .demo-image { height: 210px; padding: 24px; background: linear-gradient(145deg, #dbeafe, #eff6ff); display: flex; align-items: center; justify-content: center; }
+        .demo-window { width: 100%; max-width: 350px; background: white; border-radius: 9px; box-shadow: 0 12px 28px rgba(37, 99, 235, .18); overflow: hidden; }
+        .window-bar { height: 27px; background: #e5e7eb; display: flex; align-items: center; gap: 5px; padding: 0 10px; }
+        .window-dot { width: 8px; height: 8px; border-radius: 50%; background: #94a3b8; }
+        .error-screen { min-height: 105px; padding: 18px; display: flex; align-items: center; gap: 14px; }
+        .error-icon { flex: 0 0 42px; height: 42px; border-radius: 50%; background: #fee2e2; color: #dc2626; font-size: 25px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+        .warning-icon { background: #fef3c7; color: #d97706; }
+        .info-icon { background: #dbeafe; color: #2563eb; }
+        .error-text strong { display: block; font-size: 14px; margin-bottom: 4px; }
+        .error-text span { color: #667085; font-size: 12px; }
+        .article-caption { padding: 18px; }
+        .article-caption h2 { font-size: 18px; margin-bottom: 6px; }
+        .article-caption p { color: #667085; font-size: 14px; }
+        .read-more { display: inline-block; color: #2563eb; font-weight: 700; font-size: 13px; margin-top: 12px; }
+        .instructions { padding: 15px 0 60px; }
+        .instructions-title { text-align: center; margin: 20px 0 25px; }
+        details { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px 20px; margin-bottom: 12px; }
+        summary { cursor: pointer; font-weight: 700; }
+        .steps { margin: 12px 0 0 20px; color: #667085; font-size: 14px; }
+        .steps li { margin: 6px 0; }
+        details p { margin-top: 12px; color: #667085; font-size: 14px; }
+        .help-more { margin-top: 20px; padding: 20px; background: #eff6ff; color: #1d4ed8; border-radius: 12px; text-align: center; font-size: 14px; }
+        .zalo-btn { display: inline-block; margin-top: 12px; background: #2563eb; color: white; padding: 11px 20px; border-radius: 8px; font-weight: 700; }
+        footer { text-align: center; padding: 25px; color: #98a2b3; font-size: 13px; }
+        @media (max-width: 650px) {
+            .hero h1 { font-size: 30px; }
+            .article-grid { grid-template-columns: 1fr; }
+            .demo-image { height: 190px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a href="index.html" class="logo">PHÁT VPS</a>
+            <a href="index.html" class="back">← Quay lại trang chủ</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h1>Trung tâm hỗ trợ</h1>
+            <p>Chọn đúng lỗi đang gặp và làm lần lượt theo hướng dẫn</p>
+        </div>
+
+        <div class="container article-grid">
+            <!-- MỖI BÀI MỚI: SAO CHÉP MỘT KHỐI article-card VÀ MỘT KHỐI details TƯƠNG ỨNG -->
+            <a href="#loi-ket-noi" class="article-card">
+                <div class="demo-image">
+                    <div class="demo-window"><div class="window-bar"><i class="window-dot"></i><i class="window-dot"></i><i class="window-dot"></i></div><div class="error-screen"><div class="error-icon">×</div><div class="error-text"><strong>Remote Desktop không thể kết nối</strong><span>Không truy cập được máy tính từ xa</span></div></div></div>
+                </div>
+                <div class="article-caption"><h2>Không kết nối được VPS</h2><p>Dành cho trường hợp RDP báo lỗi, màn hình không vào được hoặc kết nối thất bại.</p><span class="read-more">Xem cách xử lý →</span></div>
+            </a>
+
+            <a href="#loi-lag-ram" class="article-card">
+                <div class="demo-image">
+                    <div class="demo-window"><div class="window-bar"><i class="window-dot"></i><i class="window-dot"></i><i class="window-dot"></i></div><div class="error-screen"><div class="error-icon warning-icon">!</div><div class="error-text"><strong>Memory: 95%</strong><span>VPS phản hồi chậm hoặc bị đứng</span></div></div></div>
+                </div>
+                <div class="article-caption"><h2>VPS bị lag hoặc đầy RAM</h2><p>Dành cho trường hợp thao tác chậm, game giật, Task Manager báo RAM gần 100%.</p><span class="read-more">Xem cách xử lý →</span></div>
+            </a>
+
+            <a href="#loi-game" class="article-card">
+                <div class="demo-image">
+                    <div class="demo-window"><div class="window-bar"><i class="window-dot"></i><i class="window-dot"></i><i class="window-dot"></i></div><div class="error-screen"><div class="error-icon">×</div><div class="error-text"><strong>Không thể mở ứng dụng</strong><span>Game hoặc file JAR không khởi chạy</span></div></div></div>
+                </div>
+                <div class="article-caption"><h2>Game hoặc file JAR không mở</h2><p>Dành cho trường hợp bấm vào game nhưng không hiện, bị tắt ngay hoặc báo lỗi Java.</p><span class="read-more">Xem cách xử lý →</span></div>
+            </a>
+
+            <a href="#loi-mat-ket-noi" class="article-card">
+                <div class="demo-image">
+                    <div class="demo-window"><div class="window-bar"><i class="window-dot"></i><i class="window-dot"></i><i class="window-dot"></i></div><div class="error-screen"><div class="error-icon warning-icon">!</div><div class="error-text"><strong>Phiên kết nối đã bị gián đoạn</strong><span>Remote Desktop tự thoát khi đang dùng</span></div></div></div>
+                </div>
+                <div class="article-caption"><h2>Mất kết nối khi đang treo</h2><p>Dành cho trường hợp RDP tự thoát, mất màn hình hoặc không biết game còn chạy không.</p><span class="read-more">Xem cách xử lý →</span></div>
+            </a>
+
+            <a href="#khoi-dong-lai" class="article-card">
+                <div class="demo-image">
+                    <div class="demo-window"><div class="window-bar"><i class="window-dot"></i><i class="window-dot"></i><i class="window-dot"></i></div><div class="error-screen"><div class="error-icon info-icon">↻</div><div class="error-text"><strong>Restart VPS</strong><span>Khởi động lại máy đúng cách</span></div></div></div>
+                </div>
+                <div class="article-caption"><h2>Cách khởi động lại VPS</h2><p>Dùng khi VPS chậm, phần mềm đứng hoặc được yêu cầu restart để sửa lỗi.</p><span class="read-more">Xem hướng dẫn →</span></div>
+            </a>
+
+            <a href="#mat-khau-het-han" class="article-card">
+                <div class="demo-image">
+                    <div class="demo-window"><div class="window-bar"><i class="window-dot"></i><i class="window-dot"></i><i class="window-dot"></i></div><div class="error-screen"><div class="error-icon info-icon">i</div><div class="error-text"><strong>Mật khẩu hoặc thời hạn VPS</strong><span>Cần lấy lại thông tin hay gia hạn</span></div></div></div>
+                </div>
+                <div class="article-caption"><h2>Quên mật khẩu hoặc sắp hết hạn</h2><p>Dành cho trường hợp quên thông tin đăng nhập, không rõ hạn dùng hoặc muốn gia hạn.</p><span class="read-more">Xem cách xử lý →</span></div>
+            </a>
+        </div>
+
+        <div class="container instructions">
+            <h2 class="instructions-title">Hướng dẫn chi tiết</h2>
+            <details id="loi-ket-noi">
+                <summary>Không kết nối được VPS</summary>
+                <ol class="steps">
+                    <li>Kiểm tra lại IP, tên đăng nhập và mật khẩu.</li>
+                    <li>Đảm bảo điện thoại hoặc máy tính vẫn có Internet.</li>
+                    <li>Tắt Remote Desktop rồi mở và kết nối lại.</li>
+                    <li>Nếu vẫn lỗi, chụp nguyên màn hình báo lỗi và gửi Zalo.</li>
+                </ol>
+            </details>
+
+            <details id="loi-lag-ram">
+                <summary>VPS bị lag hoặc đầy RAM</summary>
+                <ol class="steps">
+                    <li>Đóng tab trình duyệt và phần mềm không sử dụng.</li>
+                    <li>Giảm số tài khoản game đang treo.</li>
+                    <li>Khởi động lại VPS rồi chờ 2–3 phút.</li>
+                    <li>Nếu thường xuyên đầy RAM, cân nhắc nâng gói.</li>
+                </ol>
+            </details>
+
+            <details id="loi-game">
+                <summary>Game hoặc file JAR không mở</summary>
+                <ol class="steps">
+                    <li>Đóng hẳn game trong Task Manager.</li>
+                    <li>Mở lại đúng file game đã được cài sẵn.</li>
+                    <li>Không tự xóa hoặc di chuyển thư mục Java/game.</li>
+                    <li>Gửi ảnh lỗi qua Zalo nếu vẫn không mở được.</li>
+                </ol>
+            </details>
+
+            <details id="loi-mat-ket-noi">
+                <summary>Bị mất kết nối khi đang treo</summary>
+                <ol class="steps">
+                    <li>Kết nối lại Remote Desktop; mất màn hình không đồng nghĩa VPS đã tắt.</li>
+                    <li>Kiểm tra game còn chạy hay không.</li>
+                    <li>Nếu VPS vừa khởi động lại, chờ 2–3 phút rồi vào lại.</li>
+                </ol>
+            </details>
+
+            <details id="khoi-dong-lai">
+                <summary>Cách khởi động lại VPS</summary>
+                <ol class="steps">
+                    <li>Mở Start trên VPS.</li>
+                    <li>Chọn biểu tượng nguồn rồi chọn Restart.</li>
+                    <li>Chờ 2–3 phút trước khi kết nối lại.</li>
+                </ol>
+            </details>
+
+            <details id="mat-khau-het-han">
+                <summary>Quên mật khẩu hoặc VPS sắp hết hạn</summary>
+                <p>Liên hệ Zalo và gửi kèm IP VPS. Hãy thanh toán trước ngày hết hạn để tránh gián đoạn.</p>
+            </details>
+
+            <div class="help-more">
+                <strong>Vẫn chưa xử lý được?</strong><br>
+                Gửi ảnh toàn màn hình lỗi và IP VPS để được hỗ trợ nhanh hơn.<br>
+                <a href="https://zalo.me/0822301107" target="_blank" class="zalo-btn">💬 Liên hệ Zalo</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>© 2026 PHÁT VPS. All rights reserved.</footer>
+    <script>
+        function openSelectedGuide() {
+            if (!location.hash) return;
+            var guide = document.querySelector(location.hash);
+            if (guide && guide.tagName === 'DETAILS') {
+                guide.open = true;
+                setTimeout(function () { guide.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 50);
+            }
+        }
+        window.addEventListener('hashchange', openSelectedGuide);
+        openSelectedGuide();
+    </script>
+</body>
+</html>
